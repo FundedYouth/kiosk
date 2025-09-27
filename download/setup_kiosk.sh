@@ -16,7 +16,7 @@ chromium-browser \
   --disk-cache-size=1 \
   --disable-application-cache \
   --disable-offline-load-stale-cache \
-  https://fundedyouth.org/kiosk/display.php
+  https://fundedyouth.org/kiosk/index.php
 EOF
 
 chmod +x "$USER_HOME/kiosk.sh"
