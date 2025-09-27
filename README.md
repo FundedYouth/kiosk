@@ -1,6 +1,21 @@
 # Kiosk
 
-This a simulated kiosk app that runs using a PHP Website in conjunction with a Raspberry PI. This is run a shared hosting environment. The website displays the latest banners. While the raspberry pi runs a full-screen browser without cache, checks every 30 seconds for any changes and refreshes the site if changes are found. - You only need to add images and update the images.json
+<a href="https://www.php.net/" target="_blank"><img src="readme-media/php-logo.png" style="width: 100px;" alt="PHP logo" /></a>
+<a href="https://www.raspberrypi.com/software/" target="_blank"><img src="readme-media/raspberry-pi-os.png" style="width: 100px;" alt="Raspberry Pi OS" /></a>
+<a href="https://en.wikipedia.org/wiki/Bash_(Unix_shell)" target="_blank"><img src="readme-media/bash-logo.png" style="width: 100px;" alt="Bash logo" /></a>
+
+This a simulated kiosk app that runs using a PHP Website in conjunction with a Raspberry PI.
+
+▶ This is run on a shared hosting service `hostinger.com`. The website displays the latest banners.
+
+▶ While the Raspberry Pi runs a full-screen browser without cache
+
+▶ checks every 30 seconds for any changes
+
+▶ Refreshes the site only if changes are found.
+
+You only need to add images and update the images.json -
+Read the documentation below for configuration.
 
 > Basically a cookie cutter push system
 
