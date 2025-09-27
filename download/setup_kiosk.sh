@@ -1,6 +1,6 @@
 #!/bin/bash
 # ================================
-# Raspberry Pi Kiosk Setup Script
+# Raspberry Pi Slideshow Setup Script (Fullscreen Mode)
 # ================================
 
 USER_HOME="$HOME"
@@ -10,13 +10,13 @@ USER_NAME=$(whoami)
 cat << 'EOF' > "$USER_HOME/kiosk.sh"
 #!/bin/bash
 chromium-browser \
-  --kiosk \
+  --start-fullscreen \
   --incognito \
   --disable-cache \
   --disk-cache-size=1 \
   --disable-application-cache \
   --disable-offline-load-stale-cache \
-  https://fundedyouth.org/kiosk/index.php
+  https://fundedyouth.org/kiosk/
 EOF
 
 chmod +x "$USER_HOME/kiosk.sh"
@@ -24,7 +24,7 @@ chmod +x "$USER_HOME/kiosk.sh"
 # 2. Create systemd service file
 sudo tee /etc/systemd/system/kiosk.service > /dev/null << EOF
 [Unit]
-Description=Chromium Kiosk
+Description=Chromium Slideshow (Fullscreen)
 After=graphical.target
 
 [Service]
@@ -41,6 +41,6 @@ EOF
 # 3. Enable + start the service
 sudo systemctl daemon-reload
 sudo systemctl enable kiosk.service
-sudo systemctl start kiosk.service
+sudo systemctl restart kiosk.service
 
-echo "✅ Kiosk setup complete. Chromium will now auto-start in kiosk mode on boot."
+echo "✅ Slideshow setup complete. Chromium will now auto-start in fullscreen mode on boot (press F11 to toggle)."
