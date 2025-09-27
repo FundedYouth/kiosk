@@ -43,6 +43,8 @@ References the `images` directory. If the same images is updated and keeps the s
 
 ### Raspberry PI (Raspbian Desktop)
 
+#### Setup Kiosk Script
+
 1. Download: `/download/setup_kiosk.sh`
 
 2. Make it executable:
@@ -62,3 +64,10 @@ chmod +x setup_kiosk.sh
 ```bash
 sudo reboot
 ```
+
+#### Remove Kiosk Script
+
+1. Downlaod: `remove_kiosk.sh`
+2. Then make it writeable `chmod +x remove_kiosk.sh
+3. Run it: `./remove_kiosk.sh`
+4. Confirm it is no longer running: `systemctl status kiosk.service`
