@@ -1,6 +1,8 @@
 # Kiosk
 
-A php web app that displays the latest notifications on FundedYouth.org/kiosk/
+This a simulated kiosk app that runs using a PHP Website in conjunction with a Raspberry PI. This is run a shared hosting environment. The website displays the latest banners. While the raspberry pi runs a full-screen browser without cache, checks every 30 seconds for any changes and refreshes the site if changes are found. - You only need to add images and update the images.json
+
+> Basically a cookie cutter push system
 
 ## Settings
 
@@ -10,16 +12,16 @@ A php web app that displays the latest notifications on FundedYouth.org/kiosk/
 // Global Settings
 
 // Time between images (in milliseconds)
-// Example: 5000 = 5 seconds
-$slideshow_interval = 5000;
+// $slideshow_interval = 5000; // 5 seconds
+$slideshow_interval = 10000; // 10 seconds
 
 // Enable or disable fade effect
 // true = fade transition, false = instant image switch
 $enable_fade = true;
 
 // Time between full page reloads (in milliseconds)
-// Example: 3600000 = 1 hour
-$page_reload_time = 3600000;
+// $page_reload_time = 3600000; // 1 hour
+$page_reload_time = 3600000; // 5 hour
 ```
 
 ## Images
