@@ -3,8 +3,11 @@
 # Raspberry Pi Kiosk Setup Script
 # ================================
 
+USER_HOME="$HOME"
+USER_NAME=$(whoami)
+
 # 1. Create kiosk.sh launcher
-cat << 'EOF' > /home/pi/kiosk.sh
+cat << 'EOF' > "$USER_HOME/kiosk.sh"
 #!/bin/bash
 chromium-browser \
   --kiosk \
@@ -16,7 +19,7 @@ chromium-browser \
   https://fundedyouth.org/kiosk/display.php
 EOF
 
-chmod +x /home/pi/kiosk.sh
+chmod +x "$USER_HOME/kiosk.sh"
 
 # 2. Create systemd service file
 sudo tee /etc/systemd/system/kiosk.service > /dev/null << EOF
@@ -25,10 +28,10 @@ Description=Chromium Kiosk
 After=graphical.target
 
 [Service]
-User=pi
-Environment=XAUTHORITY=/home/pi/.Xauthority
+User=$USER_NAME
+Environment=XAUTHORITY=$USER_HOME/.Xauthority
 Environment=DISPLAY=:0
-ExecStart=/home/pi/kiosk.sh
+ExecStart=$USER_HOME/kiosk.sh
 Restart=always
 
 [Install]

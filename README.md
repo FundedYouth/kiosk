@@ -43,7 +43,7 @@ References the `images` directory. If the same images is updated and keeps the s
 
 ### Raspberry PI (Raspbian Desktop)
 
-1. Download: [kiosk_setup.sh](https://www.FundedYouth.org/kiosk/download/kiosk_setup.sh)
+1. Download: `/download/setup_kiosk.sh`
 
 2. Make it executable:
 
