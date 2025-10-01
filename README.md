@@ -43,6 +43,8 @@ $page_reload_time = 3600000; // 5 hour
 
 References the `images` directory. If the same images is updated and keeps the same name then update the `version` number so it correctly updates. Update version by `+1`
 
+**Images**
+
 ```json
 [
   {
@@ -54,6 +56,22 @@ References the `images` directory. If the same images is updated and keeps the s
     "version": 1
   }
 ]
+```
+
+**Video** (Config)
+
+- `"loop": false` - Video plays once then advances to next item
+- `"loop": true` - Video loops continuously
+- `"duration": 15000` - How long to show looping video (in milliseconds)
+  If no duration is set for looping videos, they'll play for 2x the slideshow interval
+
+```json
+{
+  "src": "videos/demo.mp4",
+  "version": 1,
+  "loop": true,
+  "duration": 15000
+},
 ```
 
 ## Operating System Configuration
